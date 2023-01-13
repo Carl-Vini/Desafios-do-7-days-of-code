@@ -1,0 +1,65 @@
+<script>
+
+
+
+
+
+function soma (x,y){
+	alert(x + y);
+}
+
+function subtracao (x,y) {
+	alert(x - y);
+}
+
+function divisao(x,y){
+	alert(x / y);
+}
+
+function multiplicacao(x,y){
+	alert(x * y);
+}
+
+
+let calculadora = true;
+
+while (calculadora) {
+
+	let escolhaDoUsuario = prompt("Voce deseja realizar qual operação matemática ? Responda com : soma , subtração, divisão ou multiplicação.  ")
+	if (escolhaDoUsuario == "soma") {
+		let valorX = parseInt(prompt("Qual o valor do primeiro número ?"));
+		let valorY = parseInt(prompt("Qual o valor do segundo número ?"));
+		soma(valorX,valorY);
+	}
+	else if (escolhaDoUsuario == "subtração"){
+		let valorX = parseInt(prompt("Qual o valor do primeiro número ?"));
+		let valorY = parseInt(prompt("Qual o valor do segundo número ?"));
+		subtracao(valorX,valorY);
+	}
+	else if (escolhaDoUsuario == "divisão"){
+		let valorX = parseInt(prompt("Qual o valor do primeiro número ?"));
+		let valorY = parseInt(prompt("Qual o valor do segundo número ?"));
+		divisao(valorX,valorY);
+	}
+	else if (escolhaDoUsuario == "multiplicação"){
+		let valorX = parseInt(prompt("Qual o valor do primeiro número ?"));
+		let valorY = parseInt(prompt("Qual o valor do segundo número ?"));
+		multiplicacao(valorX,valorY);
+	}
+
+	let confirmacao = prompt("Você deseja continuar calculando ou deseja sair ? digite : sair para fechar a calculadora. Clique em OK para continuar");
+	if (confirmacao == "sair") {
+		alert("Até a próxima !")
+		calculadora == false;
+		break;
+	}
+	
+
+
+}
+
+
+
+
+
+</script>

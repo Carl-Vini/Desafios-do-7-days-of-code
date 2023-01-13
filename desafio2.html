@@ -1,0 +1,41 @@
+
+
+
+
+
+
+
+<script>
+/*
+- Qual o seu nome?
+- Quantos anos você tem?
+- Qual linguagem de programação você está estudando?
+
+À medida que as perguntas forem sendo feitas, a pessoa que estiver usando o programa deve responder cada uma delas.
+
+No final, o sistema vai exibir a mensagem:
+
+"Olá [nome], você tem [idade] anos e já está aprendendo [linguagem]!"
+
+Note que cada informação entre [ ] é uma das respostas dadas pela pessoa.
+*/
+
+const nome = prompt("Qual o seu nome ?")
+const idade = prompt("Quantos anos você tem ?")
+const linguagem = prompt("Qual linguagem você está aprendendo ?") 
+
+alert("Olá " + nome + ", você tem " + idade + " anos, e já está aprendendo " + linguagem);
+
+const gosta = prompt(" Voce gosta de aprender " + linguagem + "?  Responda com 1  para Sim e 2 para Nâo ");
+
+
+
+if(gosta == 1 ){
+	alert(" Muito bom! Continue estudando e você terá muito sucesso.")
+}
+if (gosta == 2) {
+	alert(" Ahh que pena... Já tentou aprender outras linguagens? ")
+}
+</script>
+
+

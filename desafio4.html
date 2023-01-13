@@ -1,0 +1,51 @@
+<script>
+/*
+Você já brincou de tentar adivinhar o número que seu amigo ou amiga estava pensando? Hoje você vai voltar na infância e fazer exatamente isso. Mas agora, o jogo vai ser contra o próprio computador!
+
+Você deve criar um programinha que comece com um valor específico pré-definido entre 0 a 10 para o número que você vai adivinhar (7, por exemplo).
+
+Em seguida, o programa vai perguntar para você qual o valor que você deseja chutar e, caso você acerte, ele irá te parabenizar. Caso erre, ele vai te dar mais 2 tentativas.
+
+No fim, caso você não acerte nenhuma vez, ele vai imprimir qual era o número inicial.
+*/
+
+
+
+const aleatorio = Math.round(Math.random() * 10)
+console.log(aleatorio);
+
+
+
+let numeroUsuario = parseInt(prompt("Digite um número entre 0 a 10"));
+console.log(numeroUsuario);
+
+
+let incremento = 3;
+
+while (incremento > 1){
+	if (numeroUsuario > 10 || numeroUsuario < 0){
+		alert("Precisa ser um número entre 0 e 10");
+		numeroUsuario = parseInt(prompt("Digite um número"));
+	}
+	else if (numeroUsuario > aleatorio) {
+		incremento--;
+		alert("O numéro digitado é maior que o número secreto. Restam " + incremento + " chances" );
+		numeroUsuario = parseInt(prompt("Digite um número"));
+	}
+	else if (numeroUsuario < aleatorio ) {
+		incremento--;
+		alert("O número digitado é menor que o numero secreto Restam " + incremento + " chances" );
+		numeroUsuario = parseInt(prompt("Digite um número"));
+	}
+	else if (numeroUsuario == aleatorio) {
+		alert("Parabéns SherLock Holmes");
+		break;
+	}
+	
+	else {
+		alert("O número precisa ser entre 0 e 10 ")
+		numeroUsuario = parseInt(prompt("Digite um número"));
+	}
+} 
+
+</script>

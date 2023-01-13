@@ -1,0 +1,124 @@
+<script>
+/*
+Você deverá criar a opção de remover algum item da lista, que será exibida junto à pergunta de "você deseja adicionar uma comida na lista de compras"?
+
+A partir daí, caso a pessoa escolha essa opção, o programa irá imprimir os elementos presentes na lista atual, e a pessoa deverá escrever qual deles deseja remover.
+
+Depois disso, o programa irá remover o elemento da lista e imprimir a confirmação de que o item realmente não está mais lá.
+
+Por fim, ele voltará para o ciclo inicial de perguntas.
+
+Se, na hora de deletar o item, o mesmo não for encontrado na lista, você deverá exibir uma mensagem avisando isso.
+
+Por exemplo: "Não foi possível encontrar o item dentro da lista!"
+
+Lembre-se que a opção de remover um item só deverá estar disponível a partir do momento que existir ao menos um elemento dentro da lista de compras.
+*/
+let listaDeCompras = [];
+
+let frutas = [];
+let laticinios = [];
+let congelados = [];
+let doces = [];
+
+
+	
+
+
+let desejo = prompt("Você deseja adicionar uma comida na sua lista de compra ? Responda com sim ou não. ")
+
+while (desejo == "sim") {
+	let item1 = prompt("Qual comida deseja adicionar ?");
+	listaDeCompras.push(item1);
+	let categoria = prompt("Em qual categoria esse item se encaixa ? frutas, laticinios, congelados ou doces ?")
+	if (categoria == "frutas") {
+		frutas.push(item1);
+	}
+	else if (categoria == "laticinios") {
+		laticinios.push(item1)
+	}
+	else if (categoria == "congelados"){
+		congelados.push(item1);
+
+	}
+	else if (categoria == "doces") {
+		doces.push(item1);
+	}
+	desejo = prompt("Você deseja adicionar mais um item ? sim ou não ? Se deseja remover um item digite: remover");
+
+	while (desejo == "remover") {
+		let remover = prompt("Qual item deseja remover ?")
+		if (frutas.indexOf(remover) > -1) {
+			frutas.splice(frutas.indexOf(remover),1);
+			alert(`O ${remover} foi removido da sua lista. Lista atual: 
+			frutas: ${frutas}
+			laticinios: ${laticinios}
+			doces: ${doces}
+			congelados: ${congelados} `);
+			console.log(frutas.indexOf(remover));
+			desejo = prompt("Você deseja adicionar uma comida na sua lista de compra ? Responda com sim ou não. ");
+		}
+		else if (laticinios.indexOf(remover) > -1) {
+			laticinios.splice(laticinios.indexOf(remover),1);
+			alert(`O ${remover} foi removido da sua lista. Lista atual: 
+			frutas: ${frutas}
+			laticinios: ${laticinios}
+			doces: ${doces}
+			congelados: ${congelados} `);
+			console.log(laticinios.indexOf(remover));
+			desejo = prompt("Você deseja adicionar uma comida na sua lista de compra ? Responda com sim ou não. ");
+
+		}
+		else if (congelados.indexOf(remover)  > -1) {
+			congelados.splice(congelados.indexOf(remover),1);
+			alert(`O ${remover} foi removido da sua lista. Lista atual: 
+			frutas: ${frutas}
+			laticinios: ${laticinios}
+			doces: ${doces}
+			congelados: ${congelados} `);
+			console.log(congelados.indexOf(remover));
+			desejo = prompt("Você deseja adicionar uma comida na sua lista de compra ? Responda com sim ou não. ");
+		}
+		else if(doces.indexOf(remover) > -1 ){
+			doces.splice(doces.indexOf(remover),1);
+			alert(`O ${remover} foi removido da sua lista. Lista atual: 
+			frutas: ${frutas}
+			laticinios: ${laticinios}
+			doces: ${doces}
+			congelados: ${congelados} `);
+			console.log(doces.indexOf(remover));
+			desejo = prompt("Você deseja adicionar uma comida na sua lista de compra ? Responda com sim ou não. ");
+		}
+		else {
+			alert(` O ${remover} não foi encontrado na lista de compras. `);
+			desejo = prompt("Você deseja adicionar uma comida na sua lista de compra ? Responda com sim ou não. ");
+		}
+		console.log(frutas.indexOf(remover));
+		console.log(laticinios.indexOf(remover));	
+		console.log(congelados.indexOf(remover));
+		console.log(doces.indexOf(remover));
+
+	}
+}
+
+
+
+
+
+
+alert(`Seu carrinho:
+	
+frutas: ${frutas}
+laticinios: ${laticinios}
+doces: ${doces}
+congelados: ${congelados} `);
+
+
+
+
+console.log(listaDeCompras);
+console.log(frutas);
+</script>
+
+
+
